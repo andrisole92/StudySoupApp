@@ -1,0 +1,26 @@
+<div class="step_container">
+  <p>{{'add_course_s' | translate}}</p>
+  <div *ngFor="let c of courses">
+    {{c.name}}
+  </div>
+  <div *ngFor="let form of forms;index as i">
+    <form [formGroup]="form">
+      <div class="formGr">
+        <ion-label>{{'select_course' | translate}}<span>x</span></ion-label>
+        <ion-input disabled (tap)="onTap(i)" id="myInput" type="text" formControlName="name"
+                   placeholder="{{'start_typing_course' | translate}}" disabled></ion-input>
+      </div>
+      <div *ngIf="form.valid" class="examDate" (click)="picker.open()">
+        <p *ngIf="form.value.examDate">{{form.value.examDate}}</p>
+        <button [@fadeInOut] *ngIf="form.value.examDate === ''" ion-button color="light" (click)="picker.open()">
+          {{'add_exam_date' | translate}}
+        </button>
+        <ion-datetime #picker displayFormat="MMM DD, YYYY" min="{{now}}" max="2020-10" formControlName="examDate">
+        </ion-datetime>
+      </div>
+    </form>
+  </div>
+  <button [@fadeInOut] class="addCourseBtn" *ngIf="forms[courseCount].valid" ion-button block color="light" (click)="addNewCourse()">
+    {{('add_couse' | translate) +' '+ (courseCount+2)}}
+  </button>
+</div>

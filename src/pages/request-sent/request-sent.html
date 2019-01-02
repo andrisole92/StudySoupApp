@@ -1,0 +1,39 @@
+<ion-content>
+  <div class="appContent">
+    <p class="heading">{{ 'req_sent' | translate }}</p>
+    <div class="shadowBox">
+      <div class="shadowBox_content">
+        <div class="section">
+          <p>{{ 'has_been_sent' | translate }}</p>
+          <p>{{ 'update_contact' | translate }}</p>
+        </div>
+        <div class="contactForm">
+          <p>{{ 'contact_info' | translate }}</p>
+          <form [formGroup]="contactForm" (ngSubmit)="logForm()">
+            <div class="formGr">
+              <ion-label>{{ 'phone_number' | translate }}</ion-label>
+              <ion-input type="number" pattern="\\d*" formControlName="phone"
+                         placeholder="{{ 'enter_phone_here' | translate }}"></ion-input>
+            </div>
+            <div class="formGr">
+              <ion-label>{{ 'conf_email' | translate }}</ion-label>
+              <ion-input email type="email" formControlName="email"></ion-input>
+            </div>
+          </form>
+        </div>
+        <div class="push">
+          <div class="push_extra">
+            <p>{{ 'push' | translate }}</p>
+            <p>{{ 'by_having_this' | translate }}</p>
+          </div>
+          <div class="push_toggle">
+            <ion-item>
+              <ion-toggle (ionChange)="onToggle(push)" [(ngModel)]="push"></ion-toggle>
+            </ion-item>
+          </div>
+        </div>
+        <button ion-button color="light" float-end (click)="goToStatus()">Update</button>
+      </div>
+    </div>
+  </div>
+</ion-content>

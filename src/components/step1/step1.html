@@ -1,0 +1,9 @@
+<div class="step_container">
+  <form [formGroup]="form" (ngSubmit)="logForm()">
+    <div class="formGr">
+      <ion-label>{{'school_select' | translate}}</ion-label>
+      <ion-input disabled (tap)="onTap()" id="myInput" type="text" formControlName="name"
+                 placeholder="{{'start_typing' | translate}}"></ion-input>
+    </div>
+  </form>
+</div>

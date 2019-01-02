@@ -1,0 +1,16 @@
+page-request-sent {
+  .item-inner {
+    border: none !important;
+  }
+
+  button {
+    width: 50%;
+
+  }
+
+  .shadowBox {
+    &_content {
+      padding: 0 12px;
+    }
+  }
+}

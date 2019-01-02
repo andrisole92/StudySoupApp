@@ -1,0 +1,51 @@
+<ion-content>
+  <div class="StripeNative">
+    <p class="heading">{{ 'complete_pruchase' | translate }}</p>
+    <div class="shadowBox">
+      <div class="shadowBox_header">
+        <div>
+          <ion-icon name="lock"></ion-icon>
+          <span>{{'secure_form' | translate}}</span>
+        </div>
+      </div>
+      <div class="shadowBox_content">
+        <form [formGroup]="cardForm">
+
+          <div class="formGr">
+            <ion-label stacked>{{'name_card' | translate}}</ion-label>
+            <ion-input type="text"
+                       formControlName="cardNumber"></ion-input>
+          </div>
+          <div class="formGr">
+            <ion-label stacked>{{'card_number' | translate}}</ion-label>
+            <ion-input type="number"
+                       formControlName="cardMonth"></ion-input>
+          </div>
+          <div class="formGr">
+            <ion-label stacked>CVV</ion-label>
+            <ion-input type="number"
+                       formControlName="cardCVV"></ion-input>
+          </div>
+          <div class="formGr">
+            <ion-label stacked>{{'exp_date' | translate}}</ion-label>
+            <div class="monthYear">
+              <button ion-button color="light" (click)="monthPicker.open()">
+                {{ month === '' ? 'Month' : month}}
+                <ion-datetime #monthPicker displayFormat="MM" formControlName="month" [(ngModel)]="month"></ion-datetime>
+
+              </button>
+              <button ion-button color="light" (click)="yearPicker.open()">
+                Year
+                <ion-datetime #yearPicker displayFormat="YYYY" formControlName="year" [(ngModel)]="year"></ion-datetime>
+
+              </button>
+            </div>
+          </div>
+        </form>
+        <button ion-button block (click)="validateCard()">{{'get_sessions' | translate}}</button>
+      </div>
+    </div>
+  </div>
+
+
+</ion-content>

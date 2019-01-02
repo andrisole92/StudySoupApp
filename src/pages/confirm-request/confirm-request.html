@@ -1,0 +1,36 @@
+<ion-content>
+  <div class="Confirm">
+    <p class="heading">{{ 'confirm_request' | translate }}</p>
+    <div class="shadowBox">
+      <div class="shadowBox_content">
+
+        <p>{{ 'confirm_details' | translate }}</p>
+        <div class="section">
+          <p>{{ 'course' | translate }}</p>
+          <p>BIO 101 - Intro to Biology</p>
+        </div>
+        <div class="section">
+          <p>{{ 'duration' | translate }}</p>
+          <p>2hrs</p>
+        </div>
+        <div class="section">
+          <p>{{ 'date_of_session' | translate }}</p>
+          <p>Thursday, December 13th 2018</p>
+        </div>
+        <div class="section">
+          <p>{{ 'time_to_block' | translate }}</p>
+          <p>Afternoon</p>
+        </div>
+        <div class="section">
+          <p>{{ 'is_there_anything' | translate }}</p>
+          <ion-textarea placeholder="{{ 'please_tell' | translate }}" rows="3"></ion-textarea>
+        </div>
+      </div>
+
+    </div>
+    <div class="editSubmitBooking">
+      <button ion-button block color="light" (click)="editBook()">{{'edit_book' | translate}}</button>
+      <button ion-button block color="light" (click)="submitBook()">{{'sub_book' | translate}}</button>
+    </div>
+  </div>
+</ion-content>

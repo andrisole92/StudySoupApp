@@ -1,0 +1,10 @@
+chat-box {
+  .chatBox {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    ion-fab{
+      position: inherit;
+    }
+  }
+}

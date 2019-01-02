@@ -1,0 +1,11 @@
+page-request-status {
+ .shadowBox{
+   &_content{
+     padding: 0 12px;
+   }
+ }
+  .RequestStatus{
+    width: 90%;
+    margin: 24px auto;
+  }
+}

@@ -1,0 +1,47 @@
+@import "../components/components";
+
+.heading {
+  font-family: "Montserrat", sans-serif;
+  color: #666666 !important;
+}
+
+p, ion-label, span {
+  color: #3f3f3f;
+}
+
+.shadowBox {
+  padding: 24px 0 !important;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.3) !important;
+  overflow: hidden;
+  background: white;
+  z-index: 100;
+}
+
+.appContent {
+  width: 90%;
+  margin: auto;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-weight: 300;
+  font-style: normal;
+  src: url('../assets/fonts/Nunito-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  //font-weight: 300;
+  font-style: normal;
+  src: url('../assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+.dimmer{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+
+}

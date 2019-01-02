@@ -1,0 +1,42 @@
+<div class="step_container">
+  <p>{{'schedule_session' | translate}}</p>
+  <form [formGroup]="form" (ngSubmit)="logForm()">
+    <div class="section">
+      <div class="formGr_exp">
+        <ion-label>{{'select_course_sess' | translate}}</ion-label>
+        <ion-select [selectOptions]="courseAlertOpts" formControlName="course"
+                    placeholder="{{'please_select' | translate}}" interface="popover">
+
+          <ion-option *ngFor="let c of courses" value="{{c.name}}">{{c.name}}</ion-option>
+        </ion-select>
+      </div>
+    </div>
+    <div class="formGr_exp">
+      <ion-label>{{'select_duration' | translate}}</ion-label>
+      <ion-select [selectOptions]="durationAlertOpts" formControlName="course"
+                  placeholder="{{'please_select' | translate}}" interface="popover">
+        <ion-option value="nes">{{'one_hour' | translate}}</ion-option>
+        <ion-option value="n64">{{'two_hours' | translate}}</ion-option>
+        <ion-option value="ps">{{'three_hours' | translate}}</ion-option>
+      </ion-select>
+    </div>
+    <div class="formGr_exp">
+      <ion-label>{{'select_a_date' | translate}}</ion-label>
+      <button ion-button full icon-left color="light" (click)="picker.open()">
+        <ion-icon name="calendar"></ion-icon>
+        <ion-datetime #picker displayFormat="MMM DD, YYYY" min="{{now}}" max="2020-10" formControlName="date"
+                      placeholder="{{'please_select' | translate}}"></ion-datetime>
+      </button>
+    </div>
+    <div class="formGr_exp">
+      <ion-label>{{'select_a_time' | translate}}</ion-label>
+      <ion-select [selectOptions]="timeAlertOpts" formControlName="course"
+                  placeholder="{{'please_select' | translate}}" interface="popover">
+        <ion-option value="nes">{{'morning' | translate}}</ion-option>
+        <ion-option value="n64">{{'afternoon' | translate}}</ion-option>
+        <ion-option value="ps">{{'evening' | translate}}</ion-option>
+      </ion-select>
+    </div>
+
+  </form>
+</div>

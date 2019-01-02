@@ -1,0 +1,7 @@
+{
+  "name": "Fresh",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

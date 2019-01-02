@@ -1,0 +1,40 @@
+<!--<ion-header>-->
+  <!--<ion-toolbar>-->
+    <!--<ion-title>StudySoup</ion-title>-->
+  <!--</ion-toolbar>-->
+<!--</ion-header>-->
+<ion-content>
+  <div class="HomePage">
+    <!--<div class="dimmer"></div>-->
+    <div class="top">
+      <div class="top_content">
+        <p class="heading">{{'learn_now' | translate}}</p>
+        <div class="bonusList_container">
+          <div class="bonusList" *ngFor="let b of benefits">
+            <div class="bonusList_item">
+              <figure>
+                <img [src]="b.img"/>
+              </figure>
+              <div class="bonusList_item_text">
+                <p>{{b.text | translate}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <authbox [style.opacity]="authenticated ? '0' : '1'" [style.visibility]="authenticated ? 'hidden' : 'visible'" [(authenticated)]="authenticated"></authbox>
+    <unlock-access></unlock-access>
+    <div class="bottom">
+      <div class="testimonial">
+        <figure>
+          <img [src]="testimonial.img"/>
+        </figure>
+        <p>
+          {{testimonial.text | translate}}
+        </p>
+        <p>{{testimonial.author | translate}}</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

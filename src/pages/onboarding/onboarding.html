@@ -1,0 +1,26 @@
+<ion-content>
+  <div class="Onboarding">
+    <p class="heading">{{'purch_succ' | translate}}</p>
+    <p class="heading">{{'schedule_session' | translate}}</p>
+    <div class="shadowBox">
+      <div class="steps_container">
+        <div class="steps">
+          <div class="steps_line"></div>
+          <div class="steps_steps">
+            <span (click)="goToStep(1)" [ngClass]="stepNumber === 1 ? 'step_active' : ''">1</span>
+            <span (click)="goToStep(2)" [ngClass]="stepNumber === 2 ? 'step_active' : ''">2</span>
+            <span (click)="goToStep(3)" [ngClass]="stepNumber === 3 ? 'step_active' : ''">3</span>
+          </div>
+        </div>
+      </div>
+      <step1 [form]="schoolForm" *ngIf="stepNumber === 1"></step1>
+      <step2 [forms]="coursesForm" *ngIf="stepNumber === 2"></step2>
+      <step3 [form]="sessForm" *ngIf="stepNumber === 3"></step3>
+    </div>
+    <div [ngClass]="stepNumber === 1 ? 'prevNextNav nextOnly' : 'prevNextNav'">
+      <button *ngIf="stepNumber !== 1" ion-button block color="light" (click)="prevStep()">{{'prev' | translate}}</button>
+      <button *ngIf="stepNumber !== 3" ion-button block color="light" (click)="nextStep()">{{'next' | translate}}</button>
+      <button *ngIf="stepNumber === 3" ion-button block color="light" (click)="goToConfirm()">{{'next' | translate}}</button>
+    </div>
+  </div>
+</ion-content>

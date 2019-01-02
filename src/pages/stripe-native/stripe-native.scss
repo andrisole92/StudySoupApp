@@ -1,0 +1,54 @@
+page-stripe-native {
+  .StripeNative {
+    width: 90%;
+    margin: 24px auto;
+  }
+  .shadowBox {
+    padding-top: 0 !important;
+
+    &_header {
+      background-color: #fafafa;
+      padding: 8px;
+      font-family: sans-serif;
+      > div {
+        display: flex;
+        justify-content: center;
+      }
+      ion-icon {
+        margin-right: 12px;
+        color: #4c4c4c !important;
+      }
+    }
+
+    &_content {
+      width: 95%;
+      margin: auto;
+    }
+  }
+
+  button{
+    //color: white;
+    //background-color: #f9ad17 !important;
+    //font-family: sans-serif;
+    //font-weight: bolder;
+    //font-size: 1.2em;
+    //span {
+    //  color: white !important;
+    //}
+  }
+
+  .monthYear{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    button{
+      width: 48%
+    }
+  }
+
+  ion-datetime{
+    visibility: hidden;
+    width: 0 !important;
+    padding: 0 !important;
+  }
+}

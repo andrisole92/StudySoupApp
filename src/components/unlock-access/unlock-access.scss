@@ -1,0 +1,70 @@
+$font-light: #a4a4a4;
+$font-header: #666666;
+$font-primary: #6a6a6a;
+$button-color: #f9ad17;
+$background-color: rgba(153,153,153,0.7);
+
+unlock-access {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .access {
+    &_content {
+      width: 90%;
+      margin: auto;
+    }
+  }
+  .shadowBox {
+    text-align: center;
+    padding: 0 !important;
+    color: $font-primary;
+
+    &_header {
+      background-color: #3a99fd;
+      padding: 12px 0;
+      font-size: 1.2em;
+      margin-bottom: 12px;
+      p {
+        margin: 0;
+        font-weight: bold;
+        color: white;
+      }
+    }
+    &_content {
+      width: 90%;
+      margin: auto;
+      button{
+        color: white;
+        background-color: $button-color;
+        font-weight: bolder;
+        font-size: 1.2em;
+        span {
+          color: white !important;
+        }
+      }
+
+      p {
+        margin: 5px;
+        &:first-child {
+          font-weight: bolder;
+          font-size: 1.8em;
+          color: $font-header;
+        }
+      }
+    }
+    &_footer {
+      width: 88%;
+      margin: 8px auto;
+      font-size: 0.8em;
+      font-weight: lighter;
+      color: $font-light;
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

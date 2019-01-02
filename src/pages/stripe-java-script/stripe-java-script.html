@@ -1,0 +1,23 @@
+<ion-content>
+  <div class="StripeJS">
+    <p class="heading">{{ 'complete_pruchase' | translate }}</p>
+    <div class="shadowBox">
+      <div class="shadowBox_content">
+        <form action="/" method="post" id="payment-form">
+
+          <div class="form-row">
+            <div id="card-element"></div>
+            <div id="example3-card-number"></div>
+            <div id="example3-card-expiry"></div>
+            <div id="example3-card-cvc"></div>
+            <div class="error" id="card-errors" role="alert"></div>
+          </div>
+
+          <button ion-button block>{{'get_sessions' | translate}}</button>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</ion-content>

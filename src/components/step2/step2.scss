@@ -1,0 +1,22 @@
+step2 {
+  .formGr{
+    overflow: hidden;
+  }
+
+  .addCourseBtn {
+    float: right;
+  }
+  .text-input[disabled]{
+    opacity: 1 !important;
+  }
+
+  .examDate{
+    justify-content: flex-end;
+    display: flex;
+  }
+
+  ion-datetime{
+    position: absolute;
+    visibility: hidden;
+  }
+}

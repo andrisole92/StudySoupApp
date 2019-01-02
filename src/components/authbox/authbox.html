@@ -1,0 +1,21 @@
+<div class="authBox">
+  <div class="authBox_content">
+    <div class="shadowBox">
+      <figure>
+        <img src="assets/imgs/unlock.png"/>
+      </figure>
+      <div class="shadowBox_content">
+        <p>{{'unlock_access' | translate}}</p>
+        <p>{{'get_one_on_one' | translate}}</p>
+        <form [formGroup]="authForm">
+          <div class="formGr">
+            <ion-input autocomplete=“on” autocorrect=“on” id="email" type="email" formControlName="email" name="email"
+                       placeholder="{{'email_address' | translate}}" email></ion-input>
+          </div>
+        </form>
+        <button (click)="authenticate()" ion-button block color="light">{{'unlock_tutors' | translate}}</button>
+
+      </div>
+    </div>
+  </div>
+</div>
