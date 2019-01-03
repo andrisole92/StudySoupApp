@@ -1,13 +1,17 @@
 <div class="access">
   <div class="access_content">
+    <figure>
+      <img src="assets/imgs/limitedspace.png"/>
+    </figure>
     <div class="shadowBox">
       <div class="shadowBox_header">
+
         <p>{{'hour_package' | translate}}</p>
       </div>
       <div class="shadowBox_content">
         <p>{{'per_hour' | translate}}</p>
         <p>{{'hours_of_t' | translate}}</p>
-        <button ion-button block color="light" (click)="goToOnboarding()">{{'book_now' | translate}}</button>
+        <button class="actionButton" ion-button block color="light" (click)="goToOnboarding()">{{'book_now' | translate}}</button>
       </div>
       <div class="shadowBox_footer">
         <p>{{'one_charge' | translate}}</p>

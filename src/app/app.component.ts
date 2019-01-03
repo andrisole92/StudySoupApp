@@ -4,16 +4,14 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
 import {HomePage} from '../pages/home/home';
-import {PaymentFormPage} from "../pages/payment-form/payment-form";
-import {OnboardingPage} from "../pages/onboarding/onboarding";
-import {ConfirmRequestPage} from "../pages/confirm-request/confirm-request";
-import {RequestSentPage} from "../pages/request-sent/request-sent";
 import {TranslateService} from '@ngx-translate/core';
-import {RequestStatusPage} from "../pages/request-status/request-status";
 import {LocalNotifications} from "@ionic-native/local-notifications";
 import {StripeJavaScriptPage} from "../pages/stripe-java-script/stripe-java-script";
 import {StripeNativePage} from "../pages/stripe-native/stripe-native";
 import {ServerInterfaceProvider} from "../providers/server-interface";
+import {OnboardingPage} from "../pages/onboarding/onboarding";
+import {BookingStatusPage} from "../pages/booking-status/booking-status";
+import {BookingRequestedPage} from "../pages/booking-requested/booking-requested";
 
 @Component({
   templateUrl: 'app.html'
@@ -24,7 +22,7 @@ export class MyApp {
   constructor(private platform: Platform,
               private statusBar: StatusBar,
               private splashScreen: SplashScreen,
-                private translate: TranslateService,
+              private translate: TranslateService,
               private keyboard: Keyboard,
               private localNotif: LocalNotifications,
               private serverInterface: ServerInterfaceProvider) {

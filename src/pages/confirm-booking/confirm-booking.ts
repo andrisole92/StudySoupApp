@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {RequestSentPage} from "../request-sent/request-sent";
+import {BookingRequestedPage} from "../booking-requested/booking-requested";
 
 /**
  * Generated class for the ConfirmRequestPage page.
@@ -9,12 +9,11 @@ import {RequestSentPage} from "../request-sent/request-sent";
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
-  selector: 'page-confirm-request',
-  templateUrl: 'confirm-request.html',
+  selector: 'page-confirm-booking',
+  templateUrl: 'confirm-booking.html',
 })
-export class ConfirmRequestPage {
+export class ConfirmBookingPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -29,7 +28,7 @@ export class ConfirmRequestPage {
     }
   }
   submitBook(){
-    this.navCtrl.push(RequestSentPage);
+    this.navCtrl.push(BookingRequestedPage);
   }
 
 }

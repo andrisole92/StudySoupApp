@@ -1,5 +1,5 @@
 <ion-content>
-  <div class="appContent">
+  <div class="RequestSent">
     <p class="heading">{{ 'req_sent' | translate }}</p>
     <div class="shadowBox">
       <div class="shadowBox_content">
@@ -11,12 +11,12 @@
           <p>{{ 'contact_info' | translate }}</p>
           <form [formGroup]="contactForm" (ngSubmit)="logForm()">
             <div class="formGr">
-              <ion-label>{{ 'phone_number' | translate }}</ion-label>
-              <ion-input type="number" pattern="\\d*" formControlName="phone"
+              <ion-label stacked>{{ 'phone_number' | translate }}</ion-label>
+              <ion-input type="tel" formControlName="phone"
                          placeholder="{{ 'enter_phone_here' | translate }}"></ion-input>
             </div>
             <div class="formGr">
-              <ion-label>{{ 'conf_email' | translate }}</ion-label>
+              <ion-label stacked>{{ 'conf_email' | translate }}</ion-label>
               <ion-input email type="email" formControlName="email"></ion-input>
             </div>
           </form>
@@ -35,5 +35,8 @@
         <button ion-button color="light" float-end (click)="goToStatus()">Update</button>
       </div>
     </div>
+    <div class="afterShadowBox"></div>
   </div>
+  <chat-box></chat-box>
 </ion-content>
+<chat-box></chat-box>

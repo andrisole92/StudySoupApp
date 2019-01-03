@@ -1,0 +1,60 @@
+page-booking-status {
+
+  .RequestStatus{
+    @include pageContent();
+  }
+ .shadowBox{
+   padding-top: 0 !important;
+   &_content{
+     padding: 0 12px;
+   }
+ }
+  .RequestStatus{
+    width: 90%;
+    margin: 24px auto;
+  }
+
+  .status{
+    @include borderBottom();
+
+    &>p{
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    &_info{
+      p:nth-child(1){
+        margin-bottom: 8px;
+      }
+      p:nth-child(2){
+        font-weight: bold;
+      }
+    }
+  }
+
+  .section{
+    @include borderBottom();
+
+    &:last-child{
+      border-bottom: none !important;
+    }
+  }
+
+  .tutorBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &_ava{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin: 0 12px;
+      figure{
+        margin: 0 !important;
+        width: 12vw;
+        max-width: 100px;
+      }
+    }
+  }
+}

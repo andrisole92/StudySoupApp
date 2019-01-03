@@ -1,4 +1,8 @@
-page-request-sent {
+page-booking-requested {
+  .RequestSent {
+    @include pageContent();
+
+  }
   .item-inner {
     border: none !important;
   }

@@ -12,10 +12,19 @@ unlock-access {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  figure{
+    position: absolute;
+    margin: 0;
+    top: -15px;
+    left: -15px;
+  }
   .access {
     &_content {
+      position: relative;
       width: 90%;
       margin: auto;
+      max-width: 520px;
     }
   }
   .shadowBox {
@@ -63,6 +72,7 @@ unlock-access {
       font-weight: lighter;
       color: $font-light;
       p {
+        color: #999999 !important;
         margin: 0;
       }
     }

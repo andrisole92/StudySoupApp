@@ -9,43 +9,52 @@
         </div>
       </div>
       <div class="shadowBox_content">
+        <div class="section">
+          <p class="special">{{'special' | translate}}</p>
+          <div class="acceptedCardTypes">
+            <p>{{'accepted_cards' | translate}}</p>
+            <figure>
+              <img src="assets/imgs/cardtypes.png"/>
+            </figure>
+          </div>
+        </div>
         <form [formGroup]="cardForm">
 
           <div class="formGr">
             <ion-label stacked>{{'name_card' | translate}}</ion-label>
-            <ion-input type="text"
+            <ion-input type="text" name="name"
                        formControlName="cardNumber"></ion-input>
           </div>
           <div class="formGr">
             <ion-label stacked>{{'card_number' | translate}}</ion-label>
-            <ion-input type="number"
+            <ion-input type="number" name="card"
                        formControlName="cardMonth"></ion-input>
           </div>
           <div class="formGr">
             <ion-label stacked>CVV</ion-label>
-            <ion-input type="number"
+            <ion-input type="tel" pattern="\\d*" name="cvc" maxLength="3"
                        formControlName="cardCVV"></ion-input>
           </div>
           <div class="formGr">
             <ion-label stacked>{{'exp_date' | translate}}</ion-label>
             <div class="monthYear">
               <button ion-button color="light" (click)="monthPicker.open()">
-                {{ month === '' ? 'Month' : month}}
-                <ion-datetime #monthPicker displayFormat="MM" formControlName="month" [(ngModel)]="month"></ion-datetime>
+                {{ cardForm.value.month === 0 ? 'Month' : cardForm.value.month}}
+                <ion-datetime (ionChange)="monthChanged($event)" #monthPicker displayFormat="MM"
+                              formControlName="month"></ion-datetime>
 
               </button>
               <button ion-button color="light" (click)="yearPicker.open()">
-                Year
-                <ion-datetime #yearPicker displayFormat="YYYY" formControlName="year" [(ngModel)]="year"></ion-datetime>
-
+                {{ cardForm.value.year === 0 ? 'Year' : cardForm.value.year}}
+                <ion-datetime #yearPicker pickerFormat="YYYY" formControlName="year" max="2101"></ion-datetime>
               </button>
             </div>
           </div>
         </form>
-        <button ion-button block (click)="validateCard()">{{'get_sessions' | translate}}</button>
+        <button class="action" ion-button block (click)="validateCard()">{{'get_sessions' | translate}}</button>
       </div>
     </div>
+    <div class="afterShadowBox"></div>
   </div>
-
 
 </ion-content>

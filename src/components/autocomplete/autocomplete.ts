@@ -44,19 +44,21 @@ export class AutocompleteComponent implements AfterViewChecked {
   }
 
   selectItem(item) {
-    this.searchElem.blur();
-    this.viewCtrl.dismiss(item);
+    if (this.searchElem) {
+      this.searchElem.blur();
+      this.viewCtrl.dismiss(item);
+    }
   }
 
-  ngAfterViewInit(){
-    // this.searchElem = <HTMLInputElement>document.querySelector('.autocomplete_bar input');
+  ngAfterViewInit() {
+    this.searchElem = <HTMLInputElement>document.querySelector('.autocomplete_bar input');
   }
 
   ngAfterViewChecked() {
     if (!this.checked) {
       this.checked = true;
       setTimeout(() => {
-        this.searchElem = <HTMLInputElement>document.querySelector('.autocomplete_bar input');
+        // this.searchElem = <HTMLInputElement>document.querySelector('.autocomplete_bar input');
         if (this.searchElem) {
           this.searchElem.focus();
         }

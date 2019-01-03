@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {Stripe} from "@ionic-native/stripe";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {OnboardingPage} from "../onboarding/onboarding";
 
 /**
  * Generated class for the StripeNativePage page.
@@ -10,7 +11,6 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-stripe-native',
   templateUrl: 'stripe-native.html',
@@ -19,8 +19,6 @@ export class StripeNativePage {
 
   cardForm: FormGroup;
 
-  month: any = 5 ;
-  year: any = '';
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public stripe: Stripe,
@@ -29,24 +27,29 @@ export class StripeNativePage {
       cardNumber: ['', Validators.required],
       cardMonth: ['', Validators.required],
       cardYear: ['', Validators.required],
-      cardCVV: ['', Validators.required],
-      month: ['', Validators.required],
-      year: ['', Validators.required],
+      cardCVV: ['', Validators.compose([Validators.maxLength(3),  Validators.required])],
+      month: [0, Validators.required],
+      year: [0, Validators.required]
     });
-    window['c'] = this.month;
+    window['c'] = this.cardForm;
   }
 
   ionViewDidLoad() {
     this.stripe.setPublishableKey('pk_test_1RTaAyN3U9x043kFGSN6DXYL');
   }
 
-  validateCard(){
-    console.log(this.cardForm.value);
-    // Run card validation here and then attempt to tokenise
+  validateCard() {
+    this.navCtrl.push(OnboardingPage)
+    // this.stripe.createCardToken(this.cardForm.value)
+    //   .then(token => console.log(token))
+    //   .catch(error => console.error(error));
+  }
 
-    this.stripe.createCardToken(this.cardForm.value)
-      .then(token => console.log(token))
-      .catch(error => console.error(error));
+  // DateTime Bug does not set month
+  monthChanged(e) {
+    let {month} = e;
+    month = month < 10 ? '0' + month.toString() : month;
+    this.cardForm.controls['month'].setValue(month);
   }
 
 }

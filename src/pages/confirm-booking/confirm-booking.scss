@@ -1,7 +1,6 @@
-page-confirm-request {
+page-confirm-booking {
   .Confirm {
-    margin: auto;
-    width: 90%;
+    @include pageContent();
   }
 
   .shadowBox {

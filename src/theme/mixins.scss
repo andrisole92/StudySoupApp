@@ -1,0 +1,8 @@
+@mixin pageContent() {
+  width: 90%;
+  max-width: 1020px;
+  margin: 24px auto 24px auto;
+}
+@mixin borderBottom() {
+  border-bottom: 1px solid #f8f8f8;
+}

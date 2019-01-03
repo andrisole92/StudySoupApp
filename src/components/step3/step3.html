@@ -3,7 +3,7 @@
   <form [formGroup]="form" (ngSubmit)="logForm()">
     <div class="section">
       <div class="formGr_exp">
-        <ion-label>{{'select_course_sess' | translate}}</ion-label>
+        <ion-label stacked>{{'select_course_sess' | translate}}</ion-label>
         <ion-select [selectOptions]="courseAlertOpts" formControlName="course"
                     placeholder="{{'please_select' | translate}}" interface="popover">
 
@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="formGr_exp">
-      <ion-label>{{'select_duration' | translate}}</ion-label>
+      <ion-label stacked>{{'select_duration' | translate}}</ion-label>
       <ion-select [selectOptions]="durationAlertOpts" formControlName="course"
                   placeholder="{{'please_select' | translate}}" interface="popover">
         <ion-option value="nes">{{'one_hour' | translate}}</ion-option>
@@ -21,7 +21,7 @@
       </ion-select>
     </div>
     <div class="formGr_exp">
-      <ion-label>{{'select_a_date' | translate}}</ion-label>
+      <ion-label stacked>{{'select_a_date' | translate}}</ion-label>
       <button ion-button full icon-left color="light" (click)="picker.open()">
         <ion-icon name="calendar"></ion-icon>
         <ion-datetime #picker displayFormat="MMM DD, YYYY" min="{{now}}" max="2020-10" formControlName="date"
@@ -29,7 +29,7 @@
       </button>
     </div>
     <div class="formGr_exp">
-      <ion-label>{{'select_a_time' | translate}}</ion-label>
+      <ion-label stacked>{{'select_a_time' | translate}}</ion-label>
       <ion-select [selectOptions]="timeAlertOpts" formControlName="course"
                   placeholder="{{'please_select' | translate}}" interface="popover">
         <ion-option value="nes">{{'morning' | translate}}</ion-option>

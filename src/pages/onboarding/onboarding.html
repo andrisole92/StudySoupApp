@@ -18,9 +18,14 @@
       <step3 [form]="sessForm" *ngIf="stepNumber === 3"></step3>
     </div>
     <div [ngClass]="stepNumber === 1 ? 'prevNextNav nextOnly' : 'prevNextNav'">
-      <button *ngIf="stepNumber !== 1" ion-button block color="light" (click)="prevStep()">{{'prev' | translate}}</button>
-      <button *ngIf="stepNumber !== 3" ion-button block color="light" (click)="nextStep()">{{'next' | translate}}</button>
-      <button *ngIf="stepNumber === 3" ion-button block color="light" (click)="goToConfirm()">{{'next' | translate}}</button>
+      <button *ngIf="stepNumber !== 1" ion-button block color="light" (click)="prevStep()">{{'prev' | translate}}
+      </button>
+      <button *ngIf="stepNumber !== 3" ion-button block color="light" (click)="nextStep()">{{'next' | translate}}
+      </button>
+      <button *ngIf="stepNumber === 3" ion-button block color="light" (click)="goToConfirm()">{{'next' | translate}}
+      </button>
     </div>
+    <div class="afterShadowBox"></div>
   </div>
 </ion-content>
+<chat-box></chat-box>

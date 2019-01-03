@@ -9,11 +9,11 @@
         <p>{{'get_one_on_one' | translate}}</p>
         <form [formGroup]="authForm">
           <div class="formGr">
-            <ion-input autocomplete=“on” autocorrect=“on” id="email" type="email" formControlName="email" name="email"
+            <ion-input autocomplete=“true” spellcheck autocorrect=“on” id="email" type="email" formControlName="email" name="email"
                        placeholder="{{'email_address' | translate}}" email></ion-input>
           </div>
         </form>
-        <button (click)="authenticate()" ion-button block color="light">{{'unlock_tutors' | translate}}</button>
+        <button class="actionButton" (click)="authenticate()" ion-button block color="light">{{'unlock_tutors' | translate}}</button>
 
       </div>
     </div>

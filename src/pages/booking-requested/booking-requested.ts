@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {RequestStatusPage} from "../request-status/request-status";
 import {LocalStorageProvider} from "../../providers/local-storage";
 import {LocalNotifications} from '@ionic-native/local-notifications';
+import {BookingStatusPage} from "../booking-status/booking-status";
 
 /**
  * Generated class for the RequestSentPage page.
@@ -12,12 +12,11 @@ import {LocalNotifications} from '@ionic-native/local-notifications';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
-  selector: 'page-request-sent',
-  templateUrl: 'request-sent.html',
+  selector: 'page-booking-requested',
+  templateUrl: 'booking-requested.html',
 })
-export class RequestSentPage {
+export class BookingRequestedPage {
   private contactForm: FormGroup;
   private user: any;
   private push: false;
@@ -42,7 +41,7 @@ export class RequestSentPage {
       this.user.phone = this.contactForm.value.phone;
       this.user.push = this.push;
       this.localStorage.user = this.user;
-      this.navCtrl.push(RequestStatusPage)
+      this.navCtrl.push(BookingStatusPage)
     }
   }
 

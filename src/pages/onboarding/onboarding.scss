@@ -7,8 +7,7 @@
 page-onboarding {
 
   .Onboarding {
-    width: 90%;
-    margin: 12px auto
+    @include pageContent();
   }
   .steps {
     position: relative;
@@ -68,5 +67,12 @@ page-onboarding {
 
   .button-block {
     width: 48%;
+  }
+
+  #test{
+    background: red;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 }

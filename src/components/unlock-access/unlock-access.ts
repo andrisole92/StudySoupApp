@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {NavController} from "ionic-angular";
-import {OnboardingPage} from "../../pages/onboarding/onboarding";
+import {StripeNativePage} from "../../pages/stripe-native/stripe-native";
 
 @Component({
   selector: 'unlock-access',
@@ -13,7 +13,7 @@ export class UnlockAccessComponent {
   }
 
   goToOnboarding(){
-    this.navCtrl.push(OnboardingPage)
+    this.navCtrl.push(StripeNativePage)
   }
 
 }

@@ -1,12 +1,41 @@
 @import "../components/components";
 
+$information-desktop: "only screen and (min-width : 360px)";
+
+
+.actionButton {
+  color: white;
+  background-color: $button-color;
+  font-weight: bolder;
+  font-size: 1.2em;
+
+  span {
+    color: white !important;
+  }
+
+  &:hover {
+    background-color: #C4860C !important;
+  }
+
+  @media #{$information-desktop} {
+      height: 5rem !important;
+  }
+}
+
 .heading {
   font-family: "Montserrat", sans-serif;
   color: #666666 !important;
+  font-size: 1.5em;
 }
 
 p, ion-label, span {
   color: #3f3f3f;
+}
+
+.afterShadowBox{
+  width: 98%;
+  margin: auto;
+  padding-bottom: 100px;
 }
 
 .shadowBox {
@@ -43,5 +72,18 @@ p, ion-label, span {
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.7);
+}
+
+ion-label[stacked]{
+  margin-bottom: 4px !important;
+}
+
+.cursorPointer{
+  cursor: pointer !important;
+}
+
+.scroll-content{
+  //display: flex;
+  //flex-direction: column;
 
 }

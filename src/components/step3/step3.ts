@@ -21,8 +21,8 @@ export class Step3Component {
 
   courses: any[] = [];
 
-  now: any = new Date().getFullYear() + '-' + new Date().getMonth();
-  max: any = (new Date().getFullYear()+1) + '-' + new Date().getMonth();
+  now: any = new Date().getFullYear();
+  max: any = (new Date().getFullYear()+3);
 
   picker: any;
 

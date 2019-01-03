@@ -11,8 +11,17 @@ step2 {
   }
 
   .examDate{
-    justify-content: flex-end;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .removeCourse{
+      button {
+        background: orange;
+        span {
+          color: white;
+        }
+      }
+    }
   }
 
   ion-datetime{

@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {enableProdMode, ErrorHandler, NgModule} from '@angular/core';
-enableProdMode();
+// enableProdMode();
 import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {StatusBar} from '@ionic-native/status-bar';
@@ -10,13 +10,8 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {MyApp} from './app.component';
 import {HomePage} from '../pages/home/home';
 import {ReactiveFormsModule} from "@angular/forms";
-import {PaymentFormPage} from "../pages/payment-form/payment-form";
 import {OnboardingPage} from "../pages/onboarding/onboarding";
-import {ConfirmRequestPage} from "../pages/confirm-request/confirm-request";
-import {RequestSentPage} from "../pages/request-sent/request-sent";
-import {RequestStatusPage} from "../pages/request-status/request-status";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {Http, HttpModule} from "@angular/http";
 import {ComponentsModule} from "../components/components.module";
 import {CoursesPage} from "../components/step2/course";
 import {AutocompleteComponent} from "../components/autocomplete/autocomplete";
@@ -30,6 +25,10 @@ import {StripeJavaScriptPage} from "../pages/stripe-java-script/stripe-java-scri
 import {StripeNativePage} from "../pages/stripe-native/stripe-native";
 import { Stripe } from '@ionic-native/stripe';
 import { ServerInterfaceProvider } from '../providers/server-interface';
+import {BookingRequestedPage} from "../pages/booking-requested/booking-requested";
+import {ConfirmBookingPage} from "../pages/confirm-booking/confirm-booking";
+import {BookingStatusPage} from "../pages/booking-status/booking-status";
+import {LaunchNavigator} from "../../../Testr/node_modules/@ionic-native/launch-navigator/index";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -40,11 +39,10 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     MyApp,
     HomePage,
-    PaymentFormPage,
     OnboardingPage,
-    ConfirmRequestPage,
-    RequestSentPage,
-    RequestStatusPage,
+    BookingRequestedPage,
+    ConfirmBookingPage,
+    BookingStatusPage,
     StripeJavaScriptPage,
     StripeNativePage
   ],
@@ -68,11 +66,10 @@ export function createTranslateLoader(http: HttpClient) {
   entryComponents: [
     MyApp,
     HomePage,
-    PaymentFormPage,
     OnboardingPage,
-    ConfirmRequestPage,
-    RequestSentPage,
-    RequestStatusPage,
+    BookingRequestedPage,
+    ConfirmBookingPage,
+    BookingStatusPage,
     CoursesPage,
     AutocompleteComponent,
     StripeJavaScriptPage,
@@ -88,7 +85,8 @@ export function createTranslateLoader(http: HttpClient) {
     LocalNotifications,
     Keyboard,
     Stripe,
-    ServerInterfaceProvider
+    ServerInterfaceProvider,
+    LaunchNavigator
   ]
 })
 export class AppModule {

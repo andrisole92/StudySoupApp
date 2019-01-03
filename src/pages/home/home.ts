@@ -1,23 +1,14 @@
 import {Component, ViewChild} from '@angular/core';
 import {Content, NavController} from 'ionic-angular';
-import {style, animate, transition, trigger, state} from '@angular/animations';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html',
-  animations: [
-    trigger('fadeInOut', [
-      state('in', style({opacity: 0})),
-      state('done', style({opacity: 1})),
-      transition('in => done', animate('10000ms linear'))
-    ])
-  ]
+  templateUrl: 'home.html'
 })
 export class HomePage {
   @ViewChild(Content) content: Content;
 
   authenticated: boolean = false;
-  private fadeInOut: string = 'in';
 
   benefits = [
     {

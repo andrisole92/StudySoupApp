@@ -1,9 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ModalController} from "ionic-angular";
-import {CoursesPage} from "./course";
 import {AutocompleteComponent} from "../autocomplete/autocomplete";
-import {style, state, animate, transition, trigger} from '@angular/animations';
 
 interface Course {
   name: string,
@@ -12,18 +10,7 @@ interface Course {
 
 @Component({
   selector: 'step2',
-  templateUrl: 'step2.html',
-  animations: [
-    trigger('fadeInOut', [
-      transition(':enter', [   // :enter is alias to 'void => *'
-        style({opacity:0}),
-        animate(100, style({opacity:1}))
-      ]),
-      transition(':leave', [   // :leave is alias to '* => void'
-        animate(0, style({opacity:0}))
-      ])
-    ])
-  ]
+  templateUrl: 'step2.html'
 })
 export class Step2Component {
   @Input() forms: FormGroup[];
@@ -32,10 +19,12 @@ export class Step2Component {
   selecting: number = 0;
 
   //datepicker min max
-  now: any = new Date().getFullYear() + '-' + new Date().getMonth();
-  max: any = (new Date().getFullYear()+1) + '-' + (new Date().getMonth()+2);
+  now: any = new Date().getFullYear();
+  max: any = (new Date().getFullYear()+3);
 
   constructor(private formBuilder: FormBuilder, public modalCtrl: ModalController) {
+    console.log(this.now);
+    console.log(this.max);
   }
 
   ngOnInit() {
@@ -68,7 +57,12 @@ export class Step2Component {
 
 
   removeCourse(n: number) {
-    this.forms.splice(n, 1);
+    if (this.courseCount === 0){
+      this.forms[0] = this.buildForm();
+    } else {
+      this.courseCount--;
+      this.forms.splice(n, 1);
+    }
   }
 
   buildForm(): FormGroup {
