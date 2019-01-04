@@ -13,7 +13,7 @@ authbox {
   flex-direction: column;
   justify-content: center;
   background-color: $background-color;
-  transition: all 500ms ease;
+  transition: all 150ms ease;
 
   .authBox {
     z-index: 300;
